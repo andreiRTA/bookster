@@ -1,0 +1,139 @@
+@import "bootstrap";
+
+html, body, {
+	height: 100%;
+}
+
+body {
+	background: url('bookcase.jpg');
+	margin-top: 50px;
+	h1 {
+		font-family: 'Ultra', serif;
+	}
+}
+
+.site-header {
+	font-family: 'Ultra', serif;
+	font-size: 6em;
+	text-align: center;
+	margin: 120px 0;
+}
+
+.home-page-links {
+	text-align: center;
+	.log-in-link {
+		padding: 15px;
+	}
+}
+
+.custom-container {
+	min-height: 100%; 
+  overflow-y: hidden;
+	background: rgba(255, 255, 255, .92);
+	padding: 50px 60px;
+}
+
+.form {
+	width: 45%;
+	margin: 0 auto;
+	border: 1px solid #CCCCCC;
+	padding: 20px;
+	border-radius: 10px;
+	background: rgba(255, 255, 255, .7);
+	box-shadow: 1px 1px 1px #888888;
+	.first-form-group {
+		margin-top: 40px;
+	}
+	.password-reset {
+		margin: 20px 0;
+	}
+	// margin-bottom: 50px;
+	// padding: 20px;
+	// input, textarea, select, .uneditable-input {
+	// 	border: 1px solid #bbb;
+	// 	width: 100%;
+	// 	margin-bottom: 15px;
+	// } 
+}
+
+.form-header {
+	border-bottom: 1px solid #CCCCCC;
+}
+
+.book-image {
+	width: 20%;
+	float: left;
+}
+
+.book-details {
+	width: 80%;
+	float: left;
+	.book-title {
+		font-size: 1.4em;
+		// font-weight: bold;
+	}
+	.book-author {
+		font-size: 1.2em;
+	}
+	.book-isbn {
+		font-size: 0.85em;
+	}
+	.book-desc {
+		text-align: justify;
+	}
+}
+
+.book-form {
+	margin-top: 15px;
+}
+
+.comments {
+	margin-left: 20%;
+	.user-comment {
+		font-size: 1.2em;
+	}
+	.comment-form-submit {
+		margin: 15px 0 30px;
+	}
+	.comments-header {
+		padding-bottom: 10px;
+	}
+	.post-details {
+		margin-bottom: 30px;
+	}
+	.time-ago {
+		font-size: 0.8em;
+		color: #B2B2B2;
+	}
+}
+
+.books {
+	overflow: auto;
+	margin-bottom: 40px;
+	// &:first-of-type {
+	// 	padding-top: 50px;
+	// }
+}
+
+.book-pages-header {
+	margin-bottom: 50px;
+}
+
+.user {
+	margin-top: 20px;
+	.user-font {
+		font-size: 1.2em;
+	}
+}
+
+.user-index-header {
+	margin-bottom: 50px;
+}
+
+.book-search-form {
+	padding: 150px 0 25px;
+}
+
+.flash-msg {
+	margin: -30px 0 30px; 
+}

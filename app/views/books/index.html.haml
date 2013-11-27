@@ -1,0 +1,9 @@
+%h1.text-center Search for your favourite books!
+
+= form_tag display_results_path, method: 'get', class: "form-inline book-search-form text-center" do
+	.form-group
+		= text_field_tag :search, nil, placeholder: "Enter book title...", class: "form-control input-lg"
+
+	.form-group	
+		= submit_tag "Search", :name => nil, class: "btn btn-primary"		
+	

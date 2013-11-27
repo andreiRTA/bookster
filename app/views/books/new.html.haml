@@ -1,0 +1,17 @@
+%h1.book-pages-header Search results for '#{@search}'
+
+- @books.each do |book|
+	.books
+		.book-image= image_tag(book.image_link)
+		.book-details
+			%p.book-title= book.title
+			%p.book-author= book.authors
+			%p.book-isbn ISBN: #{book.isbn}
+
+		= form_for :book, url: books_path, html: { class: "book-form" } do |f|
+			= f.hidden_field :title, value: book.title
+			= f.hidden_field :author, value: book.authors
+			= f.hidden_field :description, value: book.description
+			= f.hidden_field :image, value: book.image_link
+			= f.hidden_field :isbn, value: book.isbn
+			= f.submit "Add To Collection", class: "btn btn-success btn-sm"

@@ -1,0 +1,41 @@
+= form_for @user, html: {class: "form-horizontal form", role: "form"} do |f|
+
+	%h1.form-header Sign Up
+
+	= render 'shared/error_messages', object: f.object
+
+	.form-group.first-form-group
+		= f.label :first_name, "First Name", class: "col-sm-3 control-label"
+		.col-sm-9
+			= f.text_field :first_name, class: "form-control"
+
+	.form-group
+		= f.label :last_name, "Last Name", class: "col-sm-3 control-label"
+		.col-sm-9
+			= f.text_field :last_name, class: "form-control"
+
+	.form-group
+		= f.label :username, class: "col-sm-3 control-label"
+		.col-sm-9
+			= f.text_field :username, class: "form-control"
+			
+	.form-group
+		= f.label :email, class: "col-sm-3 control-label"
+		.col-sm-9
+			= f.text_field :email, class: "form-control"
+			
+	.form-group
+		= f.label :password, class: "col-sm-3 control-label"
+		.col-sm-9
+			= f.password_field :password, class: "form-control"
+			
+	.form-group
+		= f.label :password_confirmation, "Confirmation", class: "col-sm-3 control-label"
+		.col-sm-9
+			= f.password_field :password_confirmation, class: "form-control"
+	
+	.form-group	
+		.col-sm-offset-3.col-sm-9
+			= f.submit "Sign Up", class: "btn btn-primary"											
+
+

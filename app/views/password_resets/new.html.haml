@@ -1,0 +1,10 @@
+= form_tag password_resets_path, { class: "form", role: "form" } do
+	%h1.form-header Reset Password
+
+	%p.password-reset To reset you password please enter your email address below.
+
+	.form-group
+		= text_field_tag :email, nil, placeholder: "Enter email...", class: "form-control"
+
+	.form-group	
+		= submit_tag "Reset Password", class: "btn btn-primary"		

@@ -1,0 +1,28 @@
+%h1.book-pages-header #{@user.username}'s book collection
+
+- if @books
+	- @books.each do |book|
+		.books
+			.book-image= image_tag(book.image)
+			.book-details
+				%p.book-title= book.title
+				%p.book-author= book.author
+				%p.book-desc= book.description
+				%p.book-isbn ISBN: #{book.isbn}
+
+.comments
+	- if @user.collection
+		%h2.comments-header Comments
+		= form_for :comment, url: comments_path do |f|
+			.div
+				= f.hidden_field :collection_user, value: params[:id]
+				= f.hidden_field :author_id, value: current_user.id
+				= f.hidden_field :author, value: current_user.username
+				= f.text_area :comment, size: "70x10", placeholder: "Please enter your comment here..."
+			.comment-form-submit
+				= f.submit "Submit Your Comment", class: "btn btn-success"
+
+		- if @comments
+			- @comments.each do |comment|
+				%p.user-comment= comment.comment
+				<p class="post-details">posted by: #{link_to comment.author, user_path(comment.author_id)} <span class="time-ago">#{time_ago_in_words(comment.created_at)} ago...&nbsp &nbsp &nbsp</span> #{link_to "delete comment", comment_path(id: comment.id, user_id: comment.collection.user_id), method: :delete if current_user.id == comment.author_id} </p>
