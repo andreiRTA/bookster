@@ -41,6 +41,17 @@ Bookster::Application.configure do
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "gmail.com",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: "bookster2013@gmail.com", # this should be a real gmail id
+    password: "foobar2013" # this should be real password of your gmail id
+  }
+  config.action_mailer.raise_delivery_errors = true
 
   # Set to :debug to see everything in the log.
   config.log_level = :info
