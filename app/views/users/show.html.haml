@@ -1,4 +1,7 @@
-%h1.book-pages-header #{@user.username}'s book collection
+.row
+	%span.col-md-3.avatar= image_tag @user.avatar.url(:medium), class: "avatar-image" 
+	%h1.book-pages-header #{@user.username}'s book collection
+
 
 - if @books
 	- @books.each do |book|

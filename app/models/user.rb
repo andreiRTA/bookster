@@ -3,6 +3,10 @@ class User < ActiveRecord::Base
 
 	has_secure_password
 
+	has_attached_file :avatar, 	:styles => { :medium => "200x200>", :thumb => "100x100>" },
+															:url  => "/assets/avatars/:id/:style/:basename.:extension",
+                  						:path => ":rails_root/public/assets/avatars/:id/:style/:basename.:extension"
+
 	before_create :generate_auth_token 
 
 	validates :first_name, 	presence: true
@@ -12,8 +16,10 @@ class User < ActiveRecord::Base
 													length: { minimum: 3 }
 	validates :email, 			presence: true,
 													uniqueness: { case_sensitive: false },
-													format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i }
+													format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i }												
 	validates :password,    length: { minimum: 6 } , :if => :password_digest_changed?
+
+	validates_attachment_presence :avatar	
 
 	def send_password_reset
 		generate_password_reset_token

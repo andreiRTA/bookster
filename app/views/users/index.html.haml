@@ -1,8 +1,8 @@
-%h1.col-md-offset-3.user-index-header All Users
+%h1.col-md-offset-2.user-index-header All Users
 
 - @users.each do |user|
 	- unless user == current_user
 		.row.user
-			%span.col-md-1.col-md-offset-3= gravatar_for user, size: 52 
+			%span.col-md-2.col-md-offset-2= image_tag user.avatar.url(:thumb) 
 			%span.col-md-3.user-font= user.username
 			%span.col-md-3= link_to "Browse Collection", user_path(user)
